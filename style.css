@@ -14,27 +14,60 @@ body {
 .shark {
     position: absolute;
     bottom: 10%;
-    width: 100px;
-    height: 60px;
-    background: url('tubarao.png') no-repeat center center; /* Nome da imagem salva */
+    width: 150px;  /* Tamanho aumentado do tubarão */
+    height: 90px;  /* Tamanho aumentado do tubarão */
+    background: url('tubarao.png') no-repeat center center; /* Caminho para a imagem */
     background-size: cover;
-    animation: swim 5s linear infinite;
+    animation: swim 8s ease-in-out infinite, rotate 5s linear infinite;
 }
 
 /* Animação dos tubarões nadando */
 @keyframes swim {
     0% {
-        left: -150px;
+        left: -200px;  /* Início fora da tela à esquerda */
+        transform: translateY(0);
+    }
+    25% {
+        left: 20%;
+        transform: translateY(-30px);
     }
     50% {
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateY(0);
+    }
+    75% {
+        left: 80%;
+        transform: translateY(30px);
     }
     100% {
-        left: 100vw;
+        left: 100vw;  /* Final da tela à direita */
+        transform: translateY(0);
     }
 }
 
+/* Adiciona um movimento rotacional para os tubarões */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animações diferentes para cada tubarão */
+.shark:nth-child(1) {
+    animation-delay: 0s, 0s;
+}
+
 .shark:nth-child(2) {
-    animation-delay: 2s;
+    animation-delay: 1s, 1s;
+}
+
+.shark:nth-child(3) {
+    animation-delay: 2s, 2s;
+}
+
+.shark:nth-child(4) {
+    animation-delay: 3s, 3s;
 }
