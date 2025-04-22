@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #1a2b36; /* Fundo oceânico */
+}
+
+.ocean {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.shark {
+    position: absolute;
+    bottom: 10%;
+    width: 100px;
+    height: 60px;
+    background: url('tubarao.png') no-repeat center center; /* Nome da imagem salva */
+    background-size: cover;
+    animation: swim 5s linear infinite;
+}
+
+/* Animação dos tubarões nadando */
+@keyframes swim {
+    0% {
+        left: -150px;
+    }
+    50% {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    100% {
+        left: 100vw;
+    }
+}
+
+.shark:nth-child(2) {
+    animation-delay: 2s;
+}
